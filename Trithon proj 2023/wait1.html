@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waiting for Rider</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+  
+        #passengerDetails {
+            margin-top: 20px;
+            background-color: #34db77;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #waitingMessage {
+            font-size: 24px;
+            margin-top: 50px;
+            display:contents;
+            color: #000;
+        }
+        .img1{
+            border-radius: 400px;
+        }
+
+        #additionalContent {
+            display :none;
+        }
+        button {
+        display: inline-block;
+        background-color: #d83838;
+        padding: 20px;
+        width: 200px;
+        color: #ffffff;
+        text-align: center;
+        cursor: pointer;
+        font-size: 20px;
+      }
+    </style>
+</head>
+<body>
+    <h1 id="waitingMessage">Waiting...</h1>
+    
+
+    <div id="additionalContent">
+        <div id="passengerDetails">
+<img class="img1" src="https://media0.giphy.com/media/Mf8Fh1MFTjTvk28GKP/giphy.gif?cid=ecf05e47f4n6i9958xmz38jha9qtmbawius2zqwroz34zv4z&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="check mark">
+            <h2>Ride Confirmed!</h2>
+          
+           
+        </div>
+    </div>
+    <br>
+
+    <a href="rider1.html"><button type="button"><b>Cancel</b></button></a>
+    <p></p>
+
+
+    <script>
+        // Function to show additional content after a delay
+        function showAdditionalContent() {
+            document.getElementById('waitingMessage').style.display = 'none';
+            document.getElementById('additionalContent').style.display = 'block';
+        }
+
+       
+        setTimeout(showAdditionalContent, 2000);
+    </script>
+</body>
+</html>

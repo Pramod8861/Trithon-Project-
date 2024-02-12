@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .bg{
+        background: #48ff00b3;
+       display:block;
+    }
+    .Nbg{
+        background: rgba(23, 138, 129, 0.855);
+        height: 90px;
+        width: 800px;
+       display:none;
+        
+    }
+    button {
+  padding: 12.5px 30px;
+  border: 0;
+  border-radius: 100px;
+  background-color: white;
+  color: #0c0b0b;
+  font-weight: Bold;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+button:hover {
+  background-color: #6fc5ff;
+  box-shadow: 0 0 20px #6fc5ff50;
+  transform: scale(1.1);
+}
+
+button:active {
+  background-color: #070f13;
+  transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+  box-shadow: none;
+  transform: scale(0.98);
+}
+.rider1{
+    color: black;
+}
+</style>
+<body style="height: 100vh;overflow: hidden; width: 100vw;">
+    <div style="height: 100%; width: 100%; display: flex; flex-direction: column; gap: 3rem; align-items: center; justify-content: center; background: rgb(201, 233, 240); color: rgb(182, 72, 72);">
+        <div class="riderDetails" style=" height: auto; width: 800px; background: rgb(166, 204, 237); display: flex; flex-direction: column; align-items: center; gap: 1rem; padding: auto;">
+            <h2 style="text-decoration: underline;"> Availabel Riders <p></p>
+                <i style="font-size:24px" class="fa"></i></h2>
+            <div class="rider1" style="width: 100%; height: auto; padding: 5px;" id="bgs">
+                <h2>Bike no:OD123;Name:Ramesh,price:60₹
+                    , destination: <span id="destination">baramunda</span> <a href="confrim.html"><button>Select</button></a> </h2>
+            </div>
+            <div class="rider1" style="width:100%; height: auto; padding: 5px;" id="bgs">
+                <h2>Bike no:OD124 ;Name:Suresh; price: 10₹
+                    , destination: <span id="destination">Damana</span> <a href="confrim.html"><button>Select</button></a></h2>
+            </div>
+            <div class="rider1" style="width: 100%; height: auto; padding: 5px;" id="bgs">
+                <h2>Bike no:OD126;Name:Rakesh;price:18₹
+                    , destination: <span id="destination">Achryavihar</span> <a href="confrim.html"><button>Select</button> </a></h2>
+            </div>
+            <div class="rider1" style="width: 100%; height: auto; padding: 5px;" id="bgs">
+                <h2>Bike no:OD124;Name:Pramod:60₹
+                    , destination:<span id="destination">baramunda</span> <a href="confrim.html"><button>Select</button></a> </h2>
+            </div>
+            <div class="rider1" style="width: 100%; height: auto; padding: 5px;" id="bgs">
+                <h2>Bike no:OD154;Name:Suresh; price: 14₹
+                    , destination: <span id="destination">Vanivihar</span> <a href="confrim.html"><button>Select</button> </a></h2>
+            </div>
+            <div class="rider1" style="width: 100%; height: auto; padding: 5px;" id="bgs">
+                <h2>Bike no:OD114 ;Name:Ram; price: 60₹
+                    , destination: <span id="destination">baramunda</span> <a href="confrim.html"><button>Select</button></a> </h2>
+            </div>
+            <div class="rider1" style="width: 100%; height: auto; padding: 5px;" id="bgs">
+                <h2>Bike no:OD174; Name:Suresh; price: 10₹
+                    , destination: <span id="destination">Vanivihar</span> <a href="confrim.html"><button>Select</button></a> </h2>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        let passDest;
+
+const searchParams = new URLSearchParams(window.location.search);
+const func = () => {
+  for (const param of searchParams) {
+    return param[1];
+  }
+};
+
+const arrayDest = [];
+const arrHtml = [];
+
+const allDest = document.querySelectorAll("#destination").forEach((dest) => {
+  arrHtml.push(dest);
+  arrayDest.push(dest.innerHTML);
+  if (dest.innerHTML == func()) {
+    dest.parentElement.classList.add("bg");
+  } else {
+    if (dest.parentElement.classList.contains("bg")) {
+      dest.parentElement.classList.remove("bg");
+    } else {
+      dest.parentElement.classList.add("Nbg");
+    }
+  }
+});
+    </script>
+</body>
+</html>

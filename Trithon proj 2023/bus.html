@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Rewards</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    margin: 0;
+    height: 200px;
+}
+
+.bus-background {
+    background-image: url(bus1.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 400px;
+    height:500px;
+    border-radius: 8px;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #ca4141;
+}
+
+form {
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.zoom {
+  padding: 50px;
+  background-color: rgb(254, 254, 254);
+  transition: transform .2s; 
+  width: 200px;
+  height: 50px;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(2.2);
+}
+
+
+button:hover {
+    background-color: rgb(228, 210, 17);
+}
+
+#result {
+    margin-top: 20px;
+    color: #333;
+}
+
+img {
+    max-width: 100%;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+    </style>
+</head>
+<body><p class="zoom"><b>Join the movement, Ride the change ! <br> Every journey on Public Transport fuels a greeener, more connected world</p>
+   
+    
+    <div class="bus-background">
+        
+        <div class="container">
+            
+            <h1>Climate Rewards</h1>
+            <form id="ticketForm" enctype="multipart/form-data">
+                <input type="text" name="" placeholder="To" id="">
+                <input type="text" placeholder="from">
+                <label for="ticketImage"><h2>Upload Bus Ticket Image:</h2></label>
+                <br>
+                <input type="file" id="ticketImage" name="ticketImage" accept="image/*">
+                <button type="button" onclick="submitTicket()">Submit</button>
+                <a href="busreward.html"><button type="button">Click Me!</button></a>
+            </form>
+           
+            <div id="result"></div>
+         
+        </div>
+      
+    </div>
+
+    <script>
+
+        function submitTicket() {
+  
+    setTimeout(() => {
+       
+        document.getElementById('result').innerHTML = `
+         
+            <button onclick="claimPoints()">Claim Points</button>
+        `;
+    }, 1000); 
+}
+
+function claimPoints() {
+
+    setTimeout(() => {
+        alert('Points claimed successfully!');
+    }, 500);
+}
+
+    </script>
+</body>
+</html>

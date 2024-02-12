@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(to right, #3498db, #2c3e50);
+    }
+
+    form {
+      width: 500px;
+      height: 720px;
+      text-align: center;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    label {
+      display: block;
+      margin: 10px 0;
+      font-size: 14px;
+      color: #333;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 15px;
+      margin: 6px 0;
+      box-sizing: border-box;
+      border: 1px solid #941bb9;
+      border-radius: 4px;
+    }
+
+    .file-input {
+      display: block;
+      height: 55px;
+    }
+
+    button {
+      background-color: #0db4ba;
+      color: rgb(0, 0, 0);
+      padding: 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      border-radius: 18px;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #79c57f;
+    }
+
+    .otp-container, .submit-container {
+      display: none;
+    }
+
+    .otp-container label,
+    .otp-container input {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    
+  </div>
+
+  <form id="registrationForm">
+    <label for="phoneNumber"><h3>Phone Number:</h3></label>
+    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
+
+    <label for="aadhaarCard"><h3>Aadhaar Card (PDF):</h3></label>
+    <input type="file" id="aadhaarCard" name="aadhaarCard" class="file-input" accept=".pdf" required>
+
+    <label for="drivingLicense"><h3>Driving License (PDF):</h3></label>
+    <input type="file" id="drivingLicense" name="drivingLicense" class="file-input" accept=".pdf" required>
+
+    <label for="bikeNumber"><h3>Bike Number:</h3></label>
+    <input type="text" id="bikeNumber" name="bikeNumber" placeholder="Enter your bike number" required>
+<br>
+<br>
+
+    <div class="otp-container">
+      <label for="otp"><h3>OTP:</h3></label>
+      <input type="text" id="otp" name="otp" placeholder= " the OTP sent to your phone" required>
+    </div>
+
+    <div class="submit-container">
+      <a href="rider1.html"><button type="submit">Submit</button></a>
+    </div>
+
+    <button type="button" onclick="sendOTP()">Send OTP</button>
+    <a href="rider1.html"><button type="button" onclick="verifyOTP()">Verify OTP</button></a>
+  </form>
+
+  <script>
+    function sendOTP() {
+    
+      document.querySelector('.otp-container').style.display = 'block';
+      document.querySelector('.submit-container').style.display = 'none';
+    }
+
+    function verifyOTP() {
+      document.querySelector('.otp-container').style.display = 'none';
+      document.querySelector('.submit-container').style.display = 'block';
+    }
+  </script>
+
+</body>
+
+</html>
